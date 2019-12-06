@@ -3,8 +3,7 @@
 
 int digitsToNum(int[4]);
 void numToDigits(int, int[4]);
-int getMax(int[4]);
-int getMin(int[4]);
+int get(short, int[4]);
 void getSortedBy(int, int[4]);
 
 int main(void) {
@@ -17,8 +16,8 @@ int main(void) {
         int n_digits[4];
         numToDigits(n, n_digits);
 
-        int n_max = getMax(n_digits);
-        int n_min = getMin(n_digits);
+        int n_max = get(0, n_digits);
+        int n_min = get(1, n_digits);
 
         n = n_max - n_min;
 
@@ -48,34 +47,21 @@ void numToDigits(int n_int, int n_digits[4]) {
     }
 }
 
-int getMax(int n_digits[4]) {
+int get(short is_min, int n_digits[4]) {
     // 配列をコピー
-    int desc_digits[4];
+    int sort_digits[4];
     for (int i = 0; i < 4; i++) {
-        desc_digits[i] = n_digits[i];
+        sort_digits[i] = n_digits[i];
     }
-
-    getSortedBy(0, desc_digits);
-
-
-    int n_max = digitsToNum(desc_digits);
-    return n_max;
+    
+    sortBy(is_min, sort_digits);
+    
+    int n = digitsToNum(sort_digits);
+    
+    retrun n;
 }
 
-int getMin(int n_digits[4]) {
-    // 配列をコピー
-    int asc_digits[4];
-    for (int i = 0; i < 4; i++) {
-        asc_digits[i] = n_digits[i];
-    }
-
-    getSortedBy(1, asc_digits);
-
-    int n_min = digitsToNum(asc_digits);
-    return n_min;
-}
-
-void getSortedBy(int is_asc, int n_digits[4]) {
+void sortBy(int is_asc, int n_digits[4]) {
     for (int i = 0; i < 4; i++) {
         for (int j = i+1; j < 4; j ++) {
             if (is_asc ? n_digits[i] > n_digits[j] : n_digits[i] < n_digits[j]) {
