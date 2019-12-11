@@ -4,7 +4,7 @@
 int digitsToNum(int[4]);
 void numToDigits(int, int[4]);
 int get(short, int[4]);
-void getSortedBy(int, int[4]);
+void sortBy(int, int[4]);
 
 int main(void) {
     int i = 0;
@@ -58,7 +58,7 @@ int get(short is_min, int n_digits[4]) {
     
     int n = digitsToNum(sort_digits);
     
-    retrun n;
+    return n;
 }
 
 void sortBy(int is_asc, int n_digits[4]) {
