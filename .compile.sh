@@ -11,5 +11,7 @@ mkdir -p "$COMPILE_TO_DIR"
 
 gcc -g -o "$COMPILE_TO" "$SOURCE_CODE"
 
+exit $?
+
 echo "Congratulations!! Successfully Compiled."
 echo "To run: ./$COMPILE_TO"
