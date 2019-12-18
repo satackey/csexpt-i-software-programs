@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gcc build active file",
+            "type": "shell",
+            "command": "'${workspaceRoot}/.compile.sh'",
+            "args": [
+                "'${relativeFile}'"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

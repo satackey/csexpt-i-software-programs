@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "math.h": "c"
+    },
+
+    // LaTeX Workshop の設定
+    "latex-workshop.latex.tools": [
+        {
+          "name": "Latexmk (upLaTeX) on Docker Hub image (satackey/kosen-reports)",
+          "command": "docker",
+          "args": [
+            "run", "--rm", "-v", "%DIR%:/workdir:cached", "satackey/texlive",
+            // "latexmk",
+            "-f", "-gg", "-pv", "-file-line-error", "%DOCFILE%.tex"
+            // "latexmk", "%DOCFILE%.tex"
+          ]
+        },
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+          "name": "upLaTeX (on Docker)",
+          "tools": [
+            "Latexmk (upLaTeX) on Docker Hub image (satackey/kosen-reports)"
+          ]
+        },
+    ],
+}
