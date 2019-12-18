@@ -10,6 +10,7 @@ int main(void) {
     int i = 0;
 
     int n;
+    printf("正の整数(４桁)の入力: ");
     scanf("%d", &n);
 
     while (n != 0 && n != 6174) {
@@ -73,12 +74,3 @@ void sortBy(int is_asc, int n_digits[4]) {
         }
     }
 }
-
-
-
-// https://marycore.jp/prog/c-lang/return-array/
-// https://www.pc-master.jp/words/shojyun-kojyun.html
-// https://programming-place.net/ppp/contents/c/rev_res/array004.html
-// http://www.c-tipsref.com/reference/math/pow.html
-// https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1090279785
-// http://www.ie.u-ryukyu.ac.jp/~e075769/study/study/c/ch7/7_10.php
