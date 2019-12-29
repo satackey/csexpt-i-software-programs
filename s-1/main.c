@@ -10,7 +10,7 @@ int main(void) {
     int i = 0;
 
     int n;
-    printf("正の整数(４桁)の入力: ");
+    printf("正の整数（４桁）の入力: ");
     scanf("%d", &n);
 
     while (n != 0 && n != 6174) {
