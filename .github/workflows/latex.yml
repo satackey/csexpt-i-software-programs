@@ -1,0 +1,41 @@
+name: Build and upload reports
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: List TeX files
+      id: list-tex-files
+      run: |
+        SOURCE_FILES=$(find . -name "main.tex")
+        SOURCE_FILES="${SOURCE_FILES//'%'/'%25'}"
+        SOURCE_FILES="${SOURCE_FILES//$'\n'/'%0A'}"
+        SOURCE_FILES="${SOURCE_FILES//$'\r'/'%0D'}"
+        echo "::set-output name=tex-files::$SOURCE_FILES"
+    
+    - name: Build LaTeX files
+      uses: satackey/action-latexmk@master
+      with:
+        docker-image: satackey/kosen-reports
+        build-files: ${{ steps.list-tex-files.outputs.tex-files }}
+
+    - run: |
+        mkdir upload
+        find . -name "*.pdf" | xargs -I{} cp '{}' upload/
+    
+    - name: Extract branch name
+      id: extract_branch
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+
+    - name: Upload to Google Drive
+      uses: satackey/action-google-drive@v1
+      with:
+        skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
+        upload-from: ./upload
+        upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
