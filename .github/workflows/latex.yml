@@ -24,7 +24,8 @@ jobs:
       with:
         docker-image: satackey/kosen-reports
         build-files: ${{ outputs.list-tex-files.tex-files }}
-      run: |
+
+    - run: |
         mkdir upload
         find . -name "*.pdf" | xargs -I{} cp {} upload/
     
