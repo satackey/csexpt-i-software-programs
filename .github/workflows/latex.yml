@@ -29,9 +29,13 @@ jobs:
         mkdir upload
         find . -name "*.pdf" | xargs -I{} cp '{}' upload/
     
-    - name: 'Upload to Google Drive'
+    - name: Extract branch name
+      id: extract_branch
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+
+    - name: Upload to Google Drive
       uses: satackey/action-google-drive@v1
       with:
         skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
         upload-from: ./upload
-        upload-to: /CSExptI-software
+        upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
