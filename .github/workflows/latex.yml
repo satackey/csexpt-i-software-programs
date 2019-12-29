@@ -23,7 +23,7 @@ jobs:
       uses: satackey/action-latexmk@master
       with:
         docker-image: satackey/kosen-reports
-        build-files: ${{ outputs.list-tex-files.tex-files }}
+        build-files: ${{ steps.list-tex-files.outputs.tex-files }}
 
     - run: |
         mkdir upload
