@@ -27,12 +27,11 @@ jobs:
 
     - run: |
         mkdir upload
-        find . -name "*.pdf" | xargs -I{} cp {} upload/
+        find . -name "*.pdf" | xargs -I{} cp '{}' upload/
     
     - name: 'Upload to Google Drive'
       uses: satackey/action-google-drive@v1
       with:
         skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
         upload-from: ./upload
-        upload-to: /reports-github-action
-
+        upload-to: /CSExptI-software
