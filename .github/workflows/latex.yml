@@ -41,7 +41,10 @@ jobs:
         upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
 
     - name: Clear skicka cache
-      run: rm -f ~/.skicka*
+      run: |
+        ls -al ~
+        rm -f ~/.skicka*
+        ls -al ~
 
     - name: '[BETA TEST] Upload to Google Drive'
       uses: satackey/action-google-drive@v1
