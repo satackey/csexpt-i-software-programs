@@ -47,4 +47,4 @@ jobs:
         upload-from: ./upload
         upload-to: /CSExptI-software-BETA-TEST/${{ steps.extract_branch.outputs.branch }}
         google-client-id: ${{ secrets.BETA_TEST_GOOGLE_CLIENT_ID }}
-        google-client-secret: ${{ secrets.BETA_TEST_GOOGLE_CLEINT_SECRET }}
+        google-client-secret: ${{ secrets.BETA_TEST_GOOGLE_CLIENT_SECRET }}
