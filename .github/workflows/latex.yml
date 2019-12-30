@@ -42,9 +42,9 @@ jobs:
 
     - name: Clear skicka cache
       run: |
-        ls -al ~
-        rm -f ~/.skicka*
-        ls -al ~
+        ls -al /home/runner/work/_temp/_github_home
+        rm -f /home/runner/work/_temp/_github_home/.skicka*
+        ls -al /home/runner/work/_temp/_github_home
 
     - name: '[BETA TEST] Upload to Google Drive'
       uses: satackey/action-google-drive@v1
