@@ -39,18 +39,3 @@ jobs:
         skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
         upload-from: ./upload
         upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
-
-    - name: Clear skicka cache
-      run: |
-        ls -al /home/runner/work/_temp/_github_home
-        rm -f /home/runner/work/_temp/_github_home/.skicka*
-        ls -al /home/runner/work/_temp/_github_home
-
-    - name: '[BETA TEST] Upload to Google Drive'
-      uses: satackey/action-google-drive@v1
-      with:
-        skicka-tokencache-json: ${{ secrets.BETA_TEST_SKICKA_TOKENCACHE_JSON }}
-        upload-from: ./upload
-        upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
-        google-client-id: ${{ secrets.BETA_TEST_GOOGLE_CLIENT_ID }}
-        google-client-secret: ${{ secrets.BETA_TEST_GOOGLE_CLIENT_SECRET }}
