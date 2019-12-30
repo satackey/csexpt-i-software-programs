@@ -44,7 +44,7 @@ jobs:
 #       run: rm -f ~/.skicka.metadata.cache
 
     - name: '[BETA TEST] Upload to Google Drive'
-      uses: satackey/action-google-drive@custom-api-key
+      uses: satackey/action-google-drive@v1.1.0-rc2
       with:
         skicka-tokencache-json: ${{ secrets.BETA_TEST_SKICKA_TOKENCACHE_JSON }}
         upload-from: ./upload
