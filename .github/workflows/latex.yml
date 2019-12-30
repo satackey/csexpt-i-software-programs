@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
     - name: List TeX files
       id: list-tex-files
@@ -20,7 +20,7 @@ jobs:
         echo "::set-output name=tex-files::$SOURCE_FILES"
     
     - name: Build LaTeX files
-      uses: satackey/action-latexmk@master
+      uses: satackey/action-latexmk@v1
       with:
         docker-image: satackey/kosen-reports
         build-files: ${{ steps.list-tex-files.outputs.tex-files }}
@@ -39,12 +39,3 @@ jobs:
         skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
         upload-from: ./upload
         upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
-    
-    - name: '[BETA TEST] Upload to Google Drive'
-      uses: satackey/action-google-drive@master
-      with:
-        skicka-tokencache-json: ${{ secrets.BETA_TEST_SKICKA_TOKENCACHE_JSON }}
-        upload-from: ./upload
-        upload-to: /CSExptI-software-BETA-TEST/${{ steps.extract_branch.outputs.branch }}
-        google-client-id: ${{ secrets.BETA_TEST_GOOGLE_CLIENT_ID }}
-        google-client-secret: ${{ secrets.BETA_TEST_GOOGLE_CLEINT_SECRET }}
