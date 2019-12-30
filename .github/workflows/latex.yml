@@ -33,15 +33,15 @@ jobs:
       id: extract_branch
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
 
-#     - name: Upload to Google Drive
-#       uses: satackey/action-google-drive@v1
-#       with:
-#         skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
-#         upload-from: ./upload
-#         upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
-# 
-#     - name: Clear skicka cache
-#       run: rm -f ~/.skicka.metadata.cache
+    - name: Upload to Google Drive
+      uses: satackey/action-google-drive@v1
+      with:
+        skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
+        upload-from: ./upload
+        upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
+
+    - name: Clear skicka cache
+      run: rm -f ~/.skicka.metadata.cache
 
     - name: '[BETA TEST] Upload to Google Drive'
       uses: satackey/action-google-drive@v1
