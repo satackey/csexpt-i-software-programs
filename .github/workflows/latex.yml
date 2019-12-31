@@ -27,7 +27,7 @@ jobs:
 
     - run: |
         mkdir upload
-        find . -name "*.pdf" | xargs -I{} cp '{}' upload/{}
+        find . -name "*.pdf" | xargs -I{} sh -c "mkdir -p $(dirname {}); cp '{}' 'upload/{}''"
     
     - name: Extract branch name
       id: extract_branch
