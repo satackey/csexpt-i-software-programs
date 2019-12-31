@@ -20,9 +20,9 @@ jobs:
         echo "::set-output name=tex-files::$SOURCE_FILES"
     
     - name: Build LaTeX files
-      uses: satackey/action-latexmk@v1
+      uses: satackey/action-latexmk@use-any-compiler
       with:
-        docker-image: satackey/kosen-reports
+        docker-image: satackey/texlive
         build-files: ${{ steps.list-tex-files.outputs.tex-files }}
 
     - run: |
