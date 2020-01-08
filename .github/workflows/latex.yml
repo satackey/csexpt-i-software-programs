@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
     - name: List TeX files
       id: list-tex-files
@@ -20,14 +20,14 @@ jobs:
         echo "::set-output name=tex-files::$SOURCE_FILES"
     
     - name: Build LaTeX files
-      uses: satackey/action-latexmk@master
+      uses: satackey/action-latex@v2
       with:
-        docker-image: satackey/kosen-reports
+        docker-image: satackey/texlive
         build-files: ${{ steps.list-tex-files.outputs.tex-files }}
 
     - run: |
         mkdir upload
-        find . -name "*.pdf" | xargs -I{} cp '{}' upload/
+        find . -name "*.pdf" | xargs -I{} sh -c "mkdir -p $(dirname {}); cp '{}' $(dirname 'upload/{}')"
     
     - name: Extract branch name
       id: extract_branch
