@@ -13,9 +13,12 @@
 \usepackage{amsmath}
 \usepackage{here}
 \usepackage{graphicx}
-\usepackage{listings}
+\usepackage{listings, jlisting}
 
-\renewcommand{\lstlistingname}{プログラム}
+% ページをまたぐ長い表を作成する by http://wright.mydns.jp/?p=1015
+\usepackage{longtable}
+
+\renewcommand{\lstlistingname}{プログラムリスト}
 
 \usepackage{latexsym}
 \usepackage{bmpsize}
@@ -23,25 +26,25 @@
 \usepackage{comment}
 % \usepackage{pdfpages}
 
-% \lstset{
-%   basicstyle={\ttfamily},
-%   identifierstyle={\small},
-%   commentstyle={\smallitshape},
-%   keywordstyle={\small\bfieries},
-%   ndkeywordstyle={\small},
-%   stringstyle={\small\ttfamily},
-%   frame={tb},
-%   breaklines=true,
-%   columns=[l]{fullflexible},
-%   numbers=left,
-%   xrightmargin=0zw,
-%   xleftmargin=3zw,
-%   numberstyle={\scriptsize},
-%   stepnumber=1,
-%   numbersep=2zw,
-%   lineskip=-0.5ex,
-%   tabsize = 4
-% }
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\small\itshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=2zw,
+  lineskip=-0.5ex,
+  tabsize=4
+}
 
 \begin{document}
   \newpage

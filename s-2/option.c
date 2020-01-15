@@ -8,9 +8,9 @@ int main(void) {
     printf("初期値: ");
     scanf("%d", &seed);
 
-    for (int i = 0; i < 1000; i ++) {
+    for (int i = 0; i < 100; i ++) {
         seed = middle_square(seed);
-        printf("%4d: %d\n", i, seed);
+        printf("%d\n", seed);
     }
 
     return 0;
@@ -18,6 +18,6 @@ int main(void) {
 
 int middle_square(int seed) {
     int squared = seed * seed;
-    int splitted = seed / 100 % 1000;
+    int splitted = squared / 100 % 10000;
     return splitted;
 }
