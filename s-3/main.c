@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+// #include <math.h>
 
 short getRandPointOnCircle(void);
 
@@ -19,7 +19,7 @@ int main(void) {
     }
 
     double pi = (double)count * 4 / n;
-    printf("%f", pi);
+    printf("%f\n", pi);
 
     return 0;
 }
