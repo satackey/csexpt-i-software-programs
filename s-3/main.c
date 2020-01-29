@@ -27,7 +27,7 @@ int main(void) {
 short getRandPointOnCircle(void) {
     double x = (double)rand() / RAND_MAX;
     double y = (double)rand() / RAND_MAX;
-    double hypotenuse = sqrt(x*x + y*y);
+    double hypotenuse = x*x + y*y;
 
     if (hypotenuse <= 1) {
         return 1;
