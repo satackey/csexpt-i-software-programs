@@ -1,0 +1,63 @@
+%!TEX encoding = UTF-8
+\documentclass[uplatex]{jsarticle}
+\usepackage{siunitx}
+\usepackage{datetime}
+% \usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{amsmath, amssymb}
+\usepackage{docmute}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{hhline}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{here}
+\usepackage{graphicx}
+\usepackage{listings, jlisting}
+\usepackage{subfig}
+
+% ページをまたぐ長い表を作成する by http://wright.mydns.jp/?p=1015
+\usepackage{longtable}
+
+\renewcommand{\lstlistingname}{プログラムリスト}
+
+\usepackage{latexsym}
+\usepackage{bmpsize}
+\usepackage{url}
+\usepackage{comment}
+% \usepackage{pdfpages}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\small\itshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=2zw,
+  lineskip=-0.5ex,
+  tabsize=4
+}
+
+\begin{document}
+  \newpage
+  \input{report/1_実験の目的}
+  \input{report/2_実験の概要}
+  \input{report/3_作成したフローチャート}
+  \input{report/4_作成したプログラムの全リスト}
+  \input{report/5_作成したプログラムの説明}
+  \input{report/6_ソフトウェアテストの結果について}
+  \input{report/7_発生したエラーや不具合およびそれらの原因と対策方法}
+  \input{report/8_実験で工夫したこと・実験から学んだこと}
+  \input{report/9_感想}
+  % \input{report/10_参考文献}
+
+\end{document}
