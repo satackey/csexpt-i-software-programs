@@ -1,0 +1,16 @@
+% !TEX root = ../main.tex
+\begin{document}
+
+\section{実験で工夫したこと・実験から学んだこと}
+最初には30行目でsqrt関数を用いて以下の式を参考に実装していた。
+\begin{align*}
+  \sqrt{x^2 + y^2} \leqq 1
+\end{align*}
+
+この式は両辺を自乗して以下のように変更可能である。
+\begin{align*}
+  x^2 + y^2 \leqq 1
+\end{align*}
+この式を用いると平方根の計算を行わなくて良いため、計算にかかる時間を削減できる工夫を行った。
+
+\end{document}
