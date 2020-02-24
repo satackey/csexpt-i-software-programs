@@ -20,7 +20,7 @@ jobs:
         echo "::set-output name=tex-files::$SOURCE_FILES"
     
     - name: Build LaTeX files
-      uses: satackey/action-latex@v2
+      uses: satackey/action-latex@v3
       with:
         docker-image: satackey/texlive
         build-files: ${{ steps.list-tex-files.outputs.tex-files }}
