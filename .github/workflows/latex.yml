@@ -36,7 +36,7 @@ jobs:
     - name: Upload to Google Drive
       uses: satackey/action-google-drive@master
       with:
-        skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
+        skicka-tokencache-json: ${{ secrets.BETA_TEST_SKICKA_TOKENCACHE_JSON }}
         upload-from: ./upload
         upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
         google-client-id: ${{ secrets.BETA_TEST_GOOGLE_CLIENT_ID }}
