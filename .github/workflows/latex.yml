@@ -34,7 +34,7 @@ jobs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
 
     - name: Upload to Google Drive
-      uses: satackey/action-google-drive@master
+      uses: satackey/action-google-drive@v1
       with:
         skicka-tokencache-json: ${{ secrets.BETA_TEST_SKICKA_TOKENCACHE_JSON }}
         upload-from: ./upload
