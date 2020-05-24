@@ -39,4 +39,3 @@ jobs:
         skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
         upload-from: ./upload
         upload-to: /CSExptI-software/${{ steps.extract_branch.outputs.branch }}
-
